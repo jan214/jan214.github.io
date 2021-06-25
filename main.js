@@ -94,7 +94,7 @@ var atexture = gl.createTexture();
 gl.bindTexture(gl.TEXTURE_2D,atexture);
 
 var image = new Image();
-image.src = "Hiragana/HaHi.png";
+image.src = "Hiragana/120x120/Ha.png";
 
 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
@@ -240,8 +240,9 @@ var lettern = 0;
 
 //Hiragana and Kanji working Katakana needs to be implemented yet
 var alphabets = ["Hiragana","Katakana","Kanji"];
-var letters = ["HaHi","BaHi","PaHi","HiHi","BiHi","PiHi","HeHi","BeHi","PeHi","TaHi","DaHi","AHi","BaHi","BeHi","BiHi","BoHi","BuHi","ChiHi","DaHi","DeHi","DoHi","DuHi","EHi","FuHi","GaHi","GeHi","GiHi","GoHi","GuHi","HaHi","HeHi","HiHi","HoHi","IHi","JiHi","KaHi","KeHi","KiHi","KoHi","KuHi","MaHi","MeHi","MiHi","MoHi","MuHi","NaHi","NeHi","NHi","NiHi","NoHi","NuHi","OHi","PaHi","PeHi","PiHi","PoHi","PuHi","RaHi","ReHi","RiHi","RoHi","RuHi","SaHi","SeHi","ShiHi","SoHi","SuHi","TaHi","TeHi","ToHi","TsuHi","UHi","WaHi","WeHi","WiHi","WoHi","YaHi","YoHi","ZuHi","YuHi","ZaHi","ZeHi","ZoHi"];
-var words = ["WaTaShi","Kanojo","KaReRa","BoKu","AMaI"];
+var letters = ["Ha","Ba","Pa","Hi","Bi","Pi","He","Be","Pe","Ta","Da","A","Ba","Be","Bi","Bo","Bu","Chi","Da","De","Do","Du","E","Fu","Ga","Ge","Gi","Go","Gu","Ha","He","Hi","Ho","I","Ji","Ka","Ke","Ki","Ko","Ku","Ma","Me","Mi","Mo","Mu","Na","Ne","N","Ni","No","Nu","O","Pa","Pe","Pi","Po","Pu","Ra","Re","Ri","Ro","Ru","Sa","Se","Shi","So","Su","Ta","Te","To","Tsu","U","Wa","Wo","Ya","Yo","Zu","Yu","Za","Ze","Zo"];
+var letters2 = ["A","Ba","Be","Bi","Bo","Bu","Da","De","Di","Do","Du","E","Ga","Ge","Gi","Go","Gu","Ha","He","Hi","Ho","Hu","I","Ka","Ke","Ki","Ko","Ku","Ma","Me","Mi","Mo","Mu","N","Na","Ne","Ni","No","Nu","O","Pa","Pe","Pi","Po","Pu","Ra","Re","Ri","Ro","Ru","Sa","Se","Si","So","Su","Ta","Te","Ti","To","Tu","U","Vu","Wa","We","Wi","Wo","Ya","Yo","Yu","Za","Ze","Zi","Zo","Zu"];
+var words = ["AMaI","AShiTa","AZuMa","BoKu","DaIDoKoRo","FuYu","GoGo","GoZeN","HeYa","Hi","HiTo","IE","IKu","INu","ISu", "Kanojo", "KaReRa", "KiNoU", "KiTa", "MaDo", "MiNaMi", "MiZu", "NaMaE", "NaTsu", "NeKo", "NiKu", "NiShi", "NoMi", "SaKaNa", "TaBe", "ToRi", "TsuKi", "TsuKuE", "WaTaShi", "YaSaI"];
 
 /*----------------------------------------------------------------------
 /	click implementation for Buttons
@@ -276,10 +277,13 @@ previousle.addEventListener("click",function(){
 		}
 		image.src = alphabets[2]+"/"+words[lettern]+".png";
 		letter.text = words[lettern];
-	}else{
+	}else if(alphabetn == 1){
 		if(lettern < 0){
-			lettern = (letters.length-1);
+			lettern = (letters2.length-1);
 		}
+		image.src = alphabets[2]+"/"+letters2[lettern]+".png";
+		letter.text = letters2[lettern];
+	}else{
 		image.src = alphabets[alphabetn]+"/"+letters[lettern]+".png";
 		letter.text = letters[lettern];
 	}
@@ -290,6 +294,8 @@ previousle.addEventListener("click",function(){
 nextle.addEventListener("click",function(){
 	clearBackBufferTexture();
 
+	console.log("alphabet "+alphabetn);
+
 	gl.bindTexture(gl.TEXTURE_2D,atexture);
 	lettern++;
 	if(alphabetn == 2){
@@ -298,10 +304,14 @@ nextle.addEventListener("click",function(){
 		}
 		image.src = alphabets[2]+"/"+words[lettern]+".png";
 		letter.text = words[lettern];
-	}else{
-		if(lettern > (letters.length-1)){
-			lettern = 0;
+	}else if(alphabetn == 1){
+		if(lettern < 0){
+			lettern = (letters2.length-1);
 		}
+		console.log(alphabets[alphabetn]+"/"+letters2[lettern]+".png");
+		image.src = alphabets[alphabetn]+"/"+letters2[lettern]+".png";
+		letter.text = letters2[lettern];
+	}else{
 		image.src = alphabets[alphabetn]+"/"+letters[lettern]+".png";
 		letter.text = letters[lettern];
 	}
