@@ -275,15 +275,18 @@ previousle.addEventListener("click",function(){
 		if(lettern < 0){
 			lettern = (words.length-1);
 		}
-		image.src = alphabets[2]+"/"+words[lettern]+".png";
+		image.src = alphabets[alphabetn]+"/"+words[lettern]+".png";
 		letter.text = words[lettern];
 	}else if(alphabetn == 1){
 		if(lettern < 0){
 			lettern = (letters2.length-1);
 		}
-		image.src = alphabets[2]+"/"+letters2[lettern]+".png";
+		image.src = alphabets[alphabetn]+"/"+letters2[lettern]+".png";
 		letter.text = letters2[lettern];
 	}else{
+		if(lettern < 0){
+			lettern = (letters.length-1);
+		}
 		image.src = alphabets[alphabetn]+"/"+letters[lettern]+".png";
 		letter.text = letters[lettern];
 	}
@@ -294,24 +297,24 @@ previousle.addEventListener("click",function(){
 nextle.addEventListener("click",function(){
 	clearBackBufferTexture();
 
-	console.log("alphabet "+alphabetn);
-
 	gl.bindTexture(gl.TEXTURE_2D,atexture);
 	lettern++;
 	if(alphabetn == 2){
 		if(lettern > (words.length-1)){
 			lettern = 0;
 		}
-		image.src = alphabets[2]+"/"+words[lettern]+".png";
+		image.src = alphabets[alphabetn]+"/"+words[lettern]+".png";
 		letter.text = words[lettern];
 	}else if(alphabetn == 1){
-		if(lettern < 0){
-			lettern = (letters2.length-1);
+		if(lettern > (letters2.length-1)){
+			lettern = 0;
 		}
-		console.log(alphabets[alphabetn]+"/"+letters2[lettern]+".png");
 		image.src = alphabets[alphabetn]+"/"+letters2[lettern]+".png";
 		letter.text = letters2[lettern];
 	}else{
+		if(lettern > (letters.length-1)){
+			lettern = 0;
+		}
 		image.src = alphabets[alphabetn]+"/"+letters[lettern]+".png";
 		letter.text = letters[lettern];
 	}
