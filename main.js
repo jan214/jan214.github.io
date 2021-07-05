@@ -326,32 +326,32 @@ nextle.addEventListener("click",function(){
 /	Mouse and Touch events
 /----------------------------------------------------------------------------------*/
 
-cvs.addEventListener('touchstart', event => {
+document.addEventListener('touchstart', event => {
 	event.preventDefault();
 	bmousedown = true;
 	mousex = event.pageX-rect.left;
 	mousey = event.pageY-rect.top;
 });
 
-cvs.addEventListener('touchmove', event => {
+document.addEventListener('touchmove', event => {
 	if(bmousedown){
 		mousex = event.pageX-rect.left;
 		mousey = event.pageY-rect.top;
 	}
 });
 
-cvs.addEventListener('touchend', event =>{
+document.addEventListener('touchend', event =>{
 	bmousedown = false;
 });
 
-cvs.addEventListener('mousedown', event => {
+document.addEventListener('mousedown', event => {
 	console.log("down:"+(event.pageX-rect.left)+"/"+(event.pageY-rect.top));
 	bmousedown = true;
 	mousex = event.pageX-rect.left;
 	mousey = event.pageY-rect.top;
 });
 
-cvs.addEventListener('mouseup', event => {
+document.addEventListener('mouseup', event => {
 	bmousedown = false;
 });
 
@@ -359,7 +359,7 @@ cvs.addEventListener('mouseup', event => {
 /		mousemve and render
 /--------------------------------------------------------------*/
 
-cvs.addEventListener('mousemove', event => {
+document.addEventListener('mousemove', event => {
 	if(bmousedown){
 		mousex = event.pageX-rect.left;
 		mousey = event.pageY-rect.top;
