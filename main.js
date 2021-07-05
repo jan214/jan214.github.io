@@ -334,6 +334,7 @@ cvs.addEventListener('touchstart', event => {
 });
 
 cvs.addEventListener('touchmove', event => {
+	event.preventDefault();
 	if(bmousedown){
 		mousex = event.pageX-rect.left;
 		mousey = event.pageY-rect.top;
