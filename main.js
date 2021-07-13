@@ -94,7 +94,7 @@ var atexture = gl.createTexture();
 gl.bindTexture(gl.TEXTURE_2D,atexture);
 
 var image = new Image();
-image.src = "Hiragana/120x120/Ha.png";
+image.src = "Hiragana/Ha.png";
 
 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
