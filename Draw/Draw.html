@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Homepage - Draw - Jan Moritz</title>
+	<link rel="stylesheet" href="draw.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+</head>
+<body>
+	<div id="top">
+	<div id="topleft"><h1><img src="../Drawicon.png" width="30px" height="30px"> 3D Modelling</h1></div>
+	<div id="topmiddle">&nbsp;</div>
+	<div id="topright"><h1>Jan Moritz</h1></div>
+	</div>
+	<div id="middle">
+	<div id="middleleft">
+		<ul id="menu">
+			<li><a href="../index.html"><img src="../Homeicon.png" height="16px" width="16px"/> Home</a></li>
+			<li><a href="../Modelling/3DModelling.html"><img src="../3Dicon.png" height="16px" width="16px"/> 3D Modelling</a></li>
+			<li><a href="../ParallaxMapping/ParallaxMapping.html"><img src="../Parallaxicon.png" height="16px" width="16px"/> Parallax Mapping</a></li>
+			<li><a href="../Game/Game.html"><img src="../Gameicon.png" height="16px" width="16px"/> Game</a></li>
+			<li><a id="selected" href="../Draw/Draw.html"><img src="../Drawicon.png" height="16px" width="16px"/> Draw</a></li>
+			<li><a href="../AboutMe/AboutMe.html"><img src="../Abouticon.png" height="16px" width="16px"/> About Me</a></li>
+			<li><a href="../Contact/Contact.html"><img src="../Contacticon.png" height="16px" width="16px"/> Contact</a></li>
+		</ul>
+	</div>
+	<div id="middlemiddle">
+		<canvas id="cvs" width="320" height="256"></canvas>
+	</div>
+	<div id="middleright">
+		<div id="alphabetsection">
+			<button id="previousal">previous</button>
+			<a id="alphabet">Hiragana</a>
+			<button id="nextal">next</button>
+		</div>
+		<div id="lettersection">
+			<button id="previous">previous</button>
+			<a id="letter">Ha</a>
+			<button id="next">next</button>
+		</div>
+	</div>
+	</div>
+	<div id="bottom">
+	<div id="bottomleft">&nbsp;</div>
+	<div id="bottommiddleright">
+		Hold down left mouse button and move to draw on the canvas.<br>
+		Change the Alphabets and letters by clicking one of the buttons.<br>
+		Made with front and back framebuffer. Backframebuffer holds the drawing part and Frontframbuffer mixes Backframebuffer drawing with the Signs texture.<br>
+		Works on Desktop Browser and on iPhone5 Safari, Opera and Firefox Browser.<br>
+	</div>
+	</div>
+	<div id="footer"><center>&#9400; Jan Moritz 2021</center></div>
+	<script src="main.js"></script>
+</body>
