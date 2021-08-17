@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Homepage - Game - Jan Moritz</title>
+	<link rel="stylesheet" href="game.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="TemplateData/favicon.ico">
+	<!--<link rel="stylesheet" href="TemplateData/style.css">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/DemoGameBuild.json", {onProgress: UnityProgress});
+    </script>
+</head>
+<body>
+	<div id="top">
+	<div id="topleft"><h1><img src="../Gameicon.png" width="30px" height="30px">Game</h1></div>
+	<div id="topmiddle">&nbsp;</div>
+	<div id="topright"><h1>Jan Moritz</h1></div>
+	</div>
+	<div id="middle">
+	<div id="middleleft">
+		<ul id="menu">
+			<li><a href="../../index.html"><img src="../../Homeicon.png" height="16px" width="16px"/> Home</a></li>
+			<li><a href="../ParallaxMapping/ParallaxMapping.html"><img src="../Parallaxicon.png" height="16px" width="16px"/> Parallax Mapping</a></li>
+			<li><a href="../../Modelling/3DModelling.html"><img src="../../3Dicon.png" height="16px" width="16px"/> 3D Modelling</a></li>
+			<li><a id="selected" href="../../Game/Game.html"><img src="../../Gameicon.png" height="16px" width="16px"/> Game</a></li>
+			<li><a href="../../Draw/Draw.html"><img src="../../Drawicon.png" height="16px" width="16px"/> Draw</a></li>
+			<li><a href="../../AboutMe/AboutMe.html"><img src="../../Abouticon.png" height="16px" width="16px"/> About Me</a></li>
+			<li><a href="../../Contact/Contact.html"><img src="../../Contacticon.png" height="16px" width="16px"/> Contact</a></li>
+		</ul>
+	</div>
+	<div id="middlemiddle">
+          <div id="gameContainer" style="width: 960px; height: 480px; margin: auto"></div>
+		<div id="controls">
+			<img src="mousenoclickwhite.png" height="24px" width="24px"/>look around<br>
+			<kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to walk<br>
+			<kbd>Left Mouse</kbd> to shoot(if aimed down sight)<br>
+			<kbd>Right Mouse</kbd> to aim down sight<br>
+			<kbd>E</kbd> to interact<br>
+			<kbd>Shift</kbd> + <kbd>A</kbd> or <kbd>D</kbd> to dodge
+		</div>
+	</div>
+	<div id="middleright">
+	    	    <h1>Development Aspects</h1>
+		3D Orbit Camera following and rotating around the player and collides with walls and floor in the level</br></br>
+		Gameplay: Hanging, Swinging, Crouched, Walking, Wall strafing, running and shooting</br></br>
+		Shader programming: Filmic grain and Chromatic abberation</br></br>
+		AI programming: In the last room AI follows and attacks if getting close</br></br>
+		Modelling and Animation of Protagonist and Antagonist</br></br>
+	</div>
+	</div>
+	<div id="bottom">
+	<div id="bottomleft">&nbsp;</div>
+	<div id="bottommiddleright">&nbsp;</div>
+	</div>
+	<div id="footer"><center>&#9400; Jan Moritz 2021</center></div>
+</body>

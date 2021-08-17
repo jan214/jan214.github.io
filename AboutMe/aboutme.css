@@ -1,0 +1,150 @@
+html,body{
+	background-image: url("../websitebackground.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: black;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+}
+
+#menu li{
+	margin: 1em 0;
+}
+
+#menu a:link{
+	color: gray;
+}
+
+#menu a:link:hover{
+	color: white;
+	font-size: 130%;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+	color: gray;
+}
+
+a:link{
+	color: gray;
+	text-decoration: none;
+}
+
+#top{
+	position: relative;
+	display: block;
+	float: left;
+	width:100%;
+	height: 15%;
+}
+
+#middle{
+	position: relative;
+	display: block;
+	float: left;
+	width:100%;
+	height: 60%;
+}
+
+#bottom{
+	position: relative;
+	display: block;
+	float: left;
+	width:100%;
+	height: 25%;
+}
+
+#selected{
+	color: white !important;
+}
+
+#topleft{
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#topmiddle{
+	position: relative;
+	display: block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+#topright{
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#middleleft{
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#menu{
+	text-align: justify;
+	float: left;
+	left: 0;
+}
+
+#middlemiddle{
+	position: relative;
+	display: block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+#middleright{
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#bottomleft{
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#bottommiddle{
+	position: relative;
+	display: block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+#bottomright{
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	height: 16%;
+}
+
+#footer{
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+	height: 5%;
+}
