@@ -1,5 +1,7 @@
 # jan214.github.io
 
-App to learn drawing of Japanese Hiragana, Katakana and some Kanji Signs.
-
-Works on Desktop and on Mobile Phones.
+Portfolio Website with:
+-3D Models and WebGL viewer
+-Parallax Mapping Effect
+-A Unity3D Game
+-Drawing App
