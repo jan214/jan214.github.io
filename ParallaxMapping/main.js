@@ -57,7 +57,7 @@ var vertShader = gl.createShader(gl.VERTEX_SHADER);
 gl.shaderSource(vertShader,vSource);
 gl.compileShader(vertShader);
 
-const fSource = "precision mediump float;"+
+const fSource = "precision highp float;"+
 				"varying vec3 apos;"+
 				"varying vec3 anormal;"+
 				"varying vec3 alightpos;"+
