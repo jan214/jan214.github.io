@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waterdisplacement.png", "start": 0, "end": 105497}], "remote_package_size": 105497, "package_uuid": "4e44b790-c07a-4aa5-a1ee-6a2b57772804"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1351925}], "remote_package_size": 1351925, "package_uuid": "eda1c93b-ff3f-4d3e-8c58-ac0a121f82c1"});
 
   })();
 
@@ -5564,6 +5564,8 @@ var ASM_CONSTS = {
       GLctx.bindTexture(target, GL.textures[texture]);
     }
 
+  function _glBlendFunc(x0, x1) { GLctx['blendFunc'](x0, x1) }
+
   function _glBufferData(target, size, data, usage) {
   
         // N.b. here first form specifies a heap subarray, second form an integer size, so the ?: code here is polymorphic. It is advised to avoid
@@ -5601,6 +5603,8 @@ var ASM_CONSTS = {
       GLctx.drawArrays(mode, first, count);
   
     }
+
+  function _glEnable(x0) { GLctx['enable'](x0) }
 
   function _glEnableVertexAttribArray(index) {
       GLctx.enableVertexAttribArray(index);
@@ -7094,12 +7098,14 @@ var asmLibraryArg = {
   "glAttachShader": _glAttachShader,
   "glBindBuffer": _glBindBuffer,
   "glBindTexture": _glBindTexture,
+  "glBlendFunc": _glBlendFunc,
   "glBufferData": _glBufferData,
   "glClear": _glClear,
   "glCompileShader": _glCompileShader,
   "glCreateProgram": _glCreateProgram,
   "glCreateShader": _glCreateShader,
   "glDrawArrays": _glDrawArrays,
+  "glEnable": _glEnable,
   "glEnableVertexAttribArray": _glEnableVertexAttribArray,
   "glGenBuffers": _glGenBuffers,
   "glGenTextures": _glGenTextures,
