@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1351925}], "remote_package_size": 1351925, "package_uuid": "12b182ca-5c34-471c-9ab3-13eaf103ab2a"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1351925}], "remote_package_size": 1351925, "package_uuid": "79f122bd-8a3e-4012-b4ae-f77426337dad"});
 
   })();
 
