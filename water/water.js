@@ -189,7 +189,7 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
     }
 
     }
-    loadPackage({"files": [{"filename": "/waterdisplacement.png", "start": 0, "end": 417303}, {"filename": "/waternormal.png", "start": 417303, "end": 1554599}], "remote_package_size": 1554599});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}], "remote_package_size": 1137296});
 
   })();
 
