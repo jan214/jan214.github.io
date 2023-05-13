@@ -2317,8 +2317,6 @@ function dbg(text) {
       GLctx.bindBuffer(target, GL.buffers[buffer]);
     }
 
-  function _glBlendFunc(x0, x1) { GLctx.blendFunc(x0, x1) }
-
   function _glBufferData(target, size, data, usage) {
   
         // N.b. here first form specifies a heap subarray, second form an integer size, so the ?: code here is polymorphic. It is advised to avoid
@@ -2356,8 +2354,6 @@ function dbg(text) {
       GLctx.drawArrays(mode, first, count);
   
     }
-
-  function _glEnable(x0) { GLctx.enable(x0) }
 
   function _glEnableVertexAttribArray(index) {
       GLctx.enableVertexAttribArray(index);
@@ -2625,42 +2621,6 @@ function dbg(text) {
         var view = HEAPF32.subarray((value)>>2, (value+count*12)>>2);
       }
       GLctx.uniform3fv(webglGetUniformLocation(location), view);
-    }
-
-  
-  
-  function _glUniformMatrix4fv(location, count, transpose, value) {
-  
-      if (count <= 18) {
-        // avoid allocation when uploading few enough uniforms
-        var view = miniTempWebGLFloatBuffers[16*count-1];
-        // hoist the heap out of the loop for size and for pthreads+growth.
-        var heap = HEAPF32;
-        value >>= 2;
-        for (var i = 0; i < 16 * count; i += 16) {
-          var dst = value + i;
-          view[i] = heap[dst];
-          view[i + 1] = heap[dst + 1];
-          view[i + 2] = heap[dst + 2];
-          view[i + 3] = heap[dst + 3];
-          view[i + 4] = heap[dst + 4];
-          view[i + 5] = heap[dst + 5];
-          view[i + 6] = heap[dst + 6];
-          view[i + 7] = heap[dst + 7];
-          view[i + 8] = heap[dst + 8];
-          view[i + 9] = heap[dst + 9];
-          view[i + 10] = heap[dst + 10];
-          view[i + 11] = heap[dst + 11];
-          view[i + 12] = heap[dst + 12];
-          view[i + 13] = heap[dst + 13];
-          view[i + 14] = heap[dst + 14];
-          view[i + 15] = heap[dst + 15];
-        }
-      } else
-      {
-        var view = HEAPF32.subarray((value)>>2, (value+count*64)>>2);
-      }
-      GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, view);
     }
 
   function _glUseProgram(program) {
@@ -5952,14 +5912,12 @@ var wasmImports = {
   "fd_write": _fd_write,
   "glAttachShader": _glAttachShader,
   "glBindBuffer": _glBindBuffer,
-  "glBlendFunc": _glBlendFunc,
   "glBufferData": _glBufferData,
   "glClear": _glClear,
   "glCompileShader": _glCompileShader,
   "glCreateProgram": _glCreateProgram,
   "glCreateShader": _glCreateShader,
   "glDrawArrays": _glDrawArrays,
-  "glEnable": _glEnable,
   "glEnableVertexAttribArray": _glEnableVertexAttribArray,
   "glGenBuffers": _glGenBuffers,
   "glGetAttribLocation": _glGetAttribLocation,
@@ -5970,7 +5928,6 @@ var wasmImports = {
   "glShaderSource": _glShaderSource,
   "glUniform1f": _glUniform1f,
   "glUniform3fv": _glUniform3fv,
-  "glUniformMatrix4fv": _glUniformMatrix4fv,
   "glUseProgram": _glUseProgram,
   "glVertexAttribPointer": _glVertexAttribPointer,
   "glfwCreateWindow": _glfwCreateWindow,
