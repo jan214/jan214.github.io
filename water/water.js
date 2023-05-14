@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "1c4ec5e4-d917-4a6c-974d-1978b26fa4f9"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "a534a200-3c8d-4e5f-b4bd-ab353847007b"});
 
   })();
 
