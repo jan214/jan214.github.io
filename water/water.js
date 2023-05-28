@@ -39,7 +39,7 @@ var objAssign = Object.assign;
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = 'C:/Users/Jan/Documents/WaterShader/TestBuild/water.data';
+      var PACKAGE_NAME = 'C:/Users/Jan/Documents/QtProjects/WaterShader/TestBuild/water.data';
       var REMOTE_PACKAGE_BASE = 'water.data';
       if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
         Module['locateFile'] = Module['locateFilePackage'];
@@ -172,10 +172,10 @@ var objAssign = Object.assign;
           var files = metadata['files'];
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
-          }          Module['removeRunDependency']('datafile_C:/Users/Jan/Documents/WaterShader/TestBuild/water.data');
+          }          Module['removeRunDependency']('datafile_C:/Users/Jan/Documents/QtProjects/WaterShader/TestBuild/water.data');
 
       };
-      Module['addRunDependency']('datafile_C:/Users/Jan/Documents/WaterShader/TestBuild/water.data');
+      Module['addRunDependency']('datafile_C:/Users/Jan/Documents/QtProjects/WaterShader/TestBuild/water.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};
 
@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "fe10eda1-f6e0-42fd-ae6d-ce27bca50116"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "5ce3ba7c-cf45-4972-a940-7157d98c349c"});
 
   })();
 
