@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "0ad73e0a-f06a-4aeb-ad40-5ce4d6ed0723"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "31be0f85-1817-4476-93e5-967dac71343b"});
 
   })();
 
@@ -6754,6 +6754,10 @@ var ASM_CONSTS = {
       GLFW.getCursorPos(winid, x, y);
     }
 
+  function _glfwGetKey(winid, key) {
+      return GLFW.getKey(winid, key);
+    }
+
   function _glfwGetMouseButton(winid, button) {
       return GLFW.getMouseButton(winid, button);
     }
@@ -7169,6 +7173,7 @@ var asmLibraryArg = {
   "glfwCreateWindow": _glfwCreateWindow,
   "glfwDestroyWindow": _glfwDestroyWindow,
   "glfwGetCursorPos": _glfwGetCursorPos,
+  "glfwGetKey": _glfwGetKey,
   "glfwGetMouseButton": _glfwGetMouseButton,
   "glfwGetTime": _glfwGetTime,
   "glfwInit": _glfwInit,
