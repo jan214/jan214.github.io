@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "0f4e968c-6c26-41d0-ac4b-7bb31a83c365"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "c7d30be4-c9ff-4c46-96e9-e0b529b8896f"});
 
   })();
 
@@ -1903,7 +1903,7 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  
+  9872: function() {canvas.onmousedown = function(event){ var rect = document.getElementById("canvas").getBoundingClientRect(); document.getElementById("output").value += "x:"+(event.clientX-rect.left)+" y:"+(event.clientY-rect.top)+"\n"; console.log("x:"+(event.clientX-rect.left)+" y:"+(event.clientY-rect.top)); }}
 };
 
 
@@ -4540,6 +4540,35 @@ var ASM_CONSTS = {
       abort('native code called abort()');
     }
 
+  var readAsmConstArgsArray = [];
+  function readAsmConstArgs(sigPtr, buf) {
+      ;
+      // Nobody should have mutated _readAsmConstArgsArray underneath us to be something else than an array.
+      assert(Array.isArray(readAsmConstArgsArray));
+      // The input buffer is allocated on the stack, so it must be stack-aligned.
+      assert(buf % 16 == 0);
+      readAsmConstArgsArray.length = 0;
+      var ch;
+      // Most arguments are i32s, so shift the buffer pointer so it is a plain
+      // index into HEAP32.
+      buf >>= 2;
+      while (ch = HEAPU8[sigPtr++]) {
+        assert(ch === 100/*'d'*/ || ch === 102/*'f'*/ || ch === 105 /*'i'*/);
+        // A double takes two 32-bit slots, and must also be aligned - the backend
+        // will emit padding to avoid that.
+        var readAsmConstArgsDouble = ch < 105;
+        if (readAsmConstArgsDouble && (buf & 1)) buf++;
+        readAsmConstArgsArray.push(readAsmConstArgsDouble ? HEAPF64[buf++ >> 1] : HEAP32[buf]);
+        ++buf;
+      }
+      return readAsmConstArgsArray;
+    }
+  function _emscripten_asm_const_int(code, sigPtr, argbuf) {
+      var args = readAsmConstArgs(sigPtr, argbuf);
+      if (!ASM_CONSTS.hasOwnProperty(code)) abort('No EM_ASM constant found at address ' + code);
+      return ASM_CONSTS[code].apply(null, args);
+    }
+
   function _emscripten_memcpy_big(dest, src, num) {
       HEAPU8.copyWithin(dest, src, src + num);
     }
@@ -6750,18 +6779,6 @@ var ASM_CONSTS = {
       return GLFW.destroyWindow(winid);
     }
 
-  function _glfwGetCursorPos(winid, x, y) {
-      GLFW.getCursorPos(winid, x, y);
-    }
-
-  function _glfwGetKey(winid, key) {
-      return GLFW.getKey(winid, key);
-    }
-
-  function _glfwGetMouseButton(winid, button) {
-      return GLFW.getMouseButton(winid, button);
-    }
-
   function _glfwGetTime() {
       return GLFW.getTime() - GLFW.initialTime;
     }
@@ -7136,6 +7153,7 @@ var asmLibraryArg = {
   "__syscall_ioctl": ___syscall_ioctl,
   "__syscall_open": ___syscall_open,
   "abort": _abort,
+  "emscripten_asm_const_int": _emscripten_asm_const_int,
   "emscripten_memcpy_big": _emscripten_memcpy_big,
   "emscripten_resize_heap": _emscripten_resize_heap,
   "emscripten_set_main_loop": _emscripten_set_main_loop,
@@ -7172,9 +7190,6 @@ var asmLibraryArg = {
   "glVertexAttribPointer": _glVertexAttribPointer,
   "glfwCreateWindow": _glfwCreateWindow,
   "glfwDestroyWindow": _glfwDestroyWindow,
-  "glfwGetCursorPos": _glfwGetCursorPos,
-  "glfwGetKey": _glfwGetKey,
-  "glfwGetMouseButton": _glfwGetMouseButton,
   "glfwGetTime": _glfwGetTime,
   "glfwInit": _glfwInit,
   "glfwMakeContextCurrent": _glfwMakeContextCurrent,
