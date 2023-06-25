@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "c7d30be4-c9ff-4c46-96e9-e0b529b8896f"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "b3ddaf42-4dff-4625-aa90-7e0b31ebe743"});
 
   })();
 
@@ -1903,7 +1903,7 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  9872: function() {canvas.onmousedown = function(event){ var rect = document.getElementById("canvas").getBoundingClientRect(); document.getElementById("output").value += "x:"+(event.clientX-rect.left)+" y:"+(event.clientY-rect.top)+"\n"; console.log("x:"+(event.clientX-rect.left)+" y:"+(event.clientY-rect.top)); }}
+  10160: function() {var array = 2.0; return array;}
 };
 
 
@@ -4568,6 +4568,10 @@ var ASM_CONSTS = {
       if (!ASM_CONSTS.hasOwnProperty(code)) abort('No EM_ASM constant found at address ' + code);
       return ASM_CONSTS[code].apply(null, args);
     }
+  function _emscripten_asm_const_double(a0,a1,a2
+  ) {
+  return _emscripten_asm_const_int(a0,a1,a2);
+  }
 
   function _emscripten_memcpy_big(dest, src, num) {
       HEAPU8.copyWithin(dest, src, src + num);
@@ -7153,7 +7157,7 @@ var asmLibraryArg = {
   "__syscall_ioctl": ___syscall_ioctl,
   "__syscall_open": ___syscall_open,
   "abort": _abort,
-  "emscripten_asm_const_int": _emscripten_asm_const_int,
+  "emscripten_asm_const_double": _emscripten_asm_const_double,
   "emscripten_memcpy_big": _emscripten_memcpy_big,
   "emscripten_resize_heap": _emscripten_resize_heap,
   "emscripten_set_main_loop": _emscripten_set_main_loop,
