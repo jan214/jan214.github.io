@@ -196,7 +196,7 @@ var objAssign = Object.assign;
     }
 
     }
-    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "2dfe9baf-e987-488d-9af4-6860de830a24"});
+    loadPackage({"files": [{"filename": "/waternormal.png", "start": 0, "end": 1137296}, {"filename": "/waterdisplacement.png", "start": 1137296, "end": 1554599}], "remote_package_size": 1554599, "package_uuid": "38f9fc32-a08e-4a72-8be8-d43c749bc9cd"});
 
   })();
 
@@ -1903,7 +1903,7 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  10000: function() {var array = 2.0; return array;}
+  9888: function() {var array = 2.0; return array;}
 };
 
 
@@ -6783,6 +6783,18 @@ var ASM_CONSTS = {
       return GLFW.destroyWindow(winid);
     }
 
+  function _glfwGetCursorPos(winid, x, y) {
+      GLFW.getCursorPos(winid, x, y);
+    }
+
+  function _glfwGetKey(winid, key) {
+      return GLFW.getKey(winid, key);
+    }
+
+  function _glfwGetMouseButton(winid, button) {
+      return GLFW.getMouseButton(winid, button);
+    }
+
   function _glfwGetTime() {
       return GLFW.getTime() - GLFW.initialTime;
     }
@@ -7194,6 +7206,9 @@ var asmLibraryArg = {
   "glVertexAttribPointer": _glVertexAttribPointer,
   "glfwCreateWindow": _glfwCreateWindow,
   "glfwDestroyWindow": _glfwDestroyWindow,
+  "glfwGetCursorPos": _glfwGetCursorPos,
+  "glfwGetKey": _glfwGetKey,
+  "glfwGetMouseButton": _glfwGetMouseButton,
   "glfwGetTime": _glfwGetTime,
   "glfwInit": _glfwInit,
   "glfwMakeContextCurrent": _glfwMakeContextCurrent,
