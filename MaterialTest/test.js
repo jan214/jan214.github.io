@@ -34,7 +34,7 @@ var Module = typeof Module != 'undefined' ? Module : {};
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = 'C:/Users/Jan/Documents/QtProjects/MaterialTest/build/test.data';
+      var PACKAGE_NAME = 'C:/Users/Jan/Documents/QtProjects/MaterialTest/WASMBuild/test.data';
       var REMOTE_PACKAGE_BASE = 'test.data';
       if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
         Module['locateFile'] = Module['locateFilePackage'];
@@ -166,10 +166,10 @@ Module['FS_createPath']("/", "Resources", true, true);
           var files = metadata['files'];
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
-          }          Module['removeRunDependency']('datafile_C:/Users/Jan/Documents/QtProjects/MaterialTest/build/test.data');
+          }          Module['removeRunDependency']('datafile_C:/Users/Jan/Documents/QtProjects/MaterialTest/WASMBuild/test.data');
 
       };
-      Module['addRunDependency']('datafile_C:/Users/Jan/Documents/QtProjects/MaterialTest/build/test.data');
+      Module['addRunDependency']('datafile_C:/Users/Jan/Documents/QtProjects/MaterialTest/WASMBuild/test.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};
 
